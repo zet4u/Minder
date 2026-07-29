@@ -4,10 +4,10 @@
 
 # Minder
 
-**ثبت ساعت کار متمرکز برای ویندوز — کاملاً آفلاین، بدون حساب کاربری، بدون تلمتری**
+**می‌خواهی بدانی روزت را کجا گذاشتی؟ Minder دقیقاً همین کار را می‌کند.**
 
 [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![platform](https://img.shields.io/badge/platform-Windows%2010%2F11-0078D6)](#نصب-و-اجرا)
+[![platform](https://img.shields.io/badge/platform-Windows%2010%2F11-0078D6)](#چطور-اجراش-کنم)
 [![electron](https://img.shields.io/badge/Electron-31-47848F)](https://www.electronjs.org/)
 [![dependencies](https://img.shields.io/badge/runtime%20dependencies-0-success)](package.json)
 
@@ -17,84 +17,91 @@
 
 <div dir="rtl">
 
-برنامه‌ی دسکتاپ ساده‌ای برای اینکه بدانی واقعاً روزت را چطور گذرانده‌ای. تایمر را روی یک دسته روشن می‌کنی، و در پایان روز یک کارت تصویری تمیز برای خودت یا برای اشتراک‌گذاری داری.
+همه‌ی ما شب این جمله را گفته‌ایم: «یعنی امروز چیکار کردم پس؟»
 
-**همه‌ی داده‌ها روی کامپیوتر خودت می‌ماند.** نه سروری، نه حسابی، نه درخواست شبکه‌ای. می‌توانی اینترنت را قطع کنی و برنامه مو به مو همان کاری را بکند که می‌کرد.
+Minder برای همین ساخته شد. تایمر را روی کاری که شروع کرده‌ای روشن می‌کنی، و آخر شب دقیقاً می‌دانی کدام ساعت‌ها کجا رفتند — با یک کارت تصویری تمیز که می‌توانی نگهش داری یا جایی بگذاریش.
+
+نه حساب کاربری می‌خواهد، نه اینترنت، نه حتی یک درخواست شبکه‌ای. داده‌هایت در یک فایل روی کامپیوتر خودت می‌ماند و همانجا می‌ماند. می‌توانی کابل شبکه را بکشی و هیچ اتفاقی نمی‌افتد.
 
 </div>
 
-## نگاهی به برنامه
+## چه شکلی است
 
-### امروز — تایمر و رکوردهای روز
+### امروز
 
 ![صفحه‌ی امروز](docs/screenshots/today.png)
 
 <div dir="rtl">
 
-تایمر زنده، مجموع روز در مقایسه با هدف، مقایسه با دیروز، و جدول رکوردهای قابل ویرایش. هر رکورد را می‌توانی دستی هم اضافه کنی — اگر یادت رفت تایمر را بزنی.
+صفحه‌ای که بیشتر از همه باز می‌ماند. یک دسته را می‌زنی و تایمر می‌رود؛ بالا می‌بینی تا هدف امروز چقدر مانده و دیروز چطور بودی.
+
+یادت رفت تایمر را بزنی؟ مشکلی نیست — بازه‌ی زمانی را دستی بزن یا هر رکورد را بعداً ویرایش کن.
 
 </div>
 
-### نمودارها — روند هفتگی، ماهانه و سالانه
+### نمودارها
 
 ![صفحه‌ی نمودارها](docs/screenshots/charts.png)
 
 <div dir="rtl">
 
-نمودار ستونی هفته، دوناتِ سهم دسته‌ها، ماهانه، نقشه‌ی حرارتی سال، به‌همراه میانگین روزانه و استریک. همه‌ی نمودارها SVG دست‌نوشته‌اند — هیچ کتابخانه‌ی نموداری در پروژه نیست.
+اینجا جایی است که الگوهایت را می‌بینی: کدام روزهای هفته واقعاً کار می‌کنی، وقتت بین دسته‌ها چطور تقسیم شده، ماه‌به‌ماه بهتر شده‌ای یا نه، و استریکت چند روز است.
+
+همه‌ی این نمودارها دستی با SVG نوشته شده‌اند — هیچ کتابخانه‌ی نموداری در پروژه نیست.
 
 </div>
 
-### کارت روزانه — خروجی PNG
+### کارت روزانه
 
 ![صفحه‌ی کارت روزانه](docs/screenshots/card.png)
 
 <div dir="rtl">
 
-کارت خروجی روز را با تاریخ شمسی، مجموع ساعت، نوار پیشرفت هر دسته و استریک می‌سازد. سه نسبت تصویر (۱۶:۱۰ ، ۱:۱ ، استوری ۹:۱۶)، دو پس‌زمینه، خروجی با ذخیره‌ی فایل یا کپی مستقیم در کلیپ‌بورد.
+خروجی روزت در یک تصویر: تاریخ شمسی، مجموع ساعت، نوار هر دسته و استریک. سه نسبت دارد — مربع، عرضی و استوری — و می‌توانی یا فایل PNG ذخیره کنی یا مستقیم کپی کنی در کلیپ‌بورد.
+
+هر عددی که روی کارت می‌بینی از داده‌ی واقعی همان روز ساخته می‌شود.
 
 </div>
 
-### تنظیمات — پروفایل، هدف، دسته‌ها و پشتیبان‌گیری
+### تنظیمات
 
-![صفحه‌ی تنظیمات](docs/screenshots/settings.png)
+![صفحه‌ی تنظیمات](docs/screenshots/settings-2.png)
 
 <div dir="rtl">
 
-نام نمایشی و آواتار، هدف روزانه، ارقام فارسی، تقویم شمسی، مدیریت دسته‌ها (ایموجی و رنگ)، و برون‌ریزی / بازیابی کامل داده‌ها.
+نام و تصویر خودت، هدف روزانه، دسته‌ها با ایموجی و رنگ دلخواه. ارقام فارسی و تقویم شمسی را هم می‌توانی خاموش کنی اگر ترجیح می‌دهی.
+
+و مهم‌تر از همه: پشتیبان‌گیری و بازیابی کامل با یک فایل JSON — برای وقتی که ویندوز را عوض می‌کنی.
 
 </div>
 
-## ویژگی‌ها
+## چه کارهایی می‌کند
 
 <div dir="rtl">
 
-| | |
-| --- | --- |
-| 🕒 **دو روش ثبت** | تایمر زنده یا ورود دستی بازه‌ی زمانی |
-| 📂 **دسته‌بندی** | دسته‌ی دلخواه با ایموجی و رنگ اختصاصی |
-| 📈 **تحلیل** | هفتگی، ماهانه، نقشه‌ی حرارتی سالانه، استریک |
-| 🖼 **کارت خروجی** | PNG تا ۱۰۸۰×۱۹۲۰ برای استوری و پست |
-| 📅 **تقویم شمسی** | تبدیل تاریخ درون‌ساخت، بدون کتابخانه‌ی خارجی |
-| 🔒 **حریم خصوصی** | صفر درخواست شبکه، صفر تلمتری |
-| 🪶 **سبک** | بدون وابستگی زمان اجرا، بدون مادول بومی، بدون نیاز به کمپایلر |
-| 🖋 **فونت مدام** | هشت وزن باندل‌شده، رابط کاربری کاملاً راست‌به‌چپ |
+- ثبت با تایمر زنده، یا ورود دستی بازه‌ی زمانی برای وقتی که یادت رفت
+- دسته‌ی دلخواه با ایموجی و رنگ خودت — کد نویسی، مطالعه، ورزش، هر چیزی
+- نمودار هفتگی، ماهانه، نقشه‌ی حرارتی سالانه، میانگین روزانه و استریک
+- کارت خروجی PNG تا ۱۰۸۰×۱۹۲۰ برای استوری و پست
+- تقویم شمسی با تبدیل درون‌ساخت، بدون هیچ کتابخانه‌ی خارجی
+- رابط کاربری کاملاً راست‌به‌چپ با فونت مدام در هشت وزن
+- صفر درخواست شبکه، صفر تلمتری، صفر وابستگی زمان اجرا
 
 </div>
 
-## نصب و اجرا
+## چطور اجراش کنم
 
-### کاربر عادی
+### فقط می‌خواهم استفاده کنم
 
 <div dir="rtl">
 
-از بخش [Releases](../../releases) فایل `Minder-win-x64.zip` را بگیر، هر جا خواستی اکسترکت کن و `Minder.exe` را اجرا کن. نصب لازم نیست.
+از [Releases](../../releases) فایل `Minder-win-x64.zip` را بگیر، هر جا خواستی اکسترکت کن، `Minder.exe` را بزن. همین. نصب لازم نیست و می‌توانی پوشه را روی فلش هم ببری.
 
-> ویندوز به برنامه‌های امضانشده هشدار SmartScreen می‌دهد. روی **More info → Run anyway** بزن.
+> ویندوز به برنامه‌های امضانشده هشدار SmartScreen می‌دهد. روی **More info → Run anyway** بزن. این برای همه‌ی پروژه‌های اوپن‌سورس بدون گواهی امضا عادی است.
 
 </div>
 
-### توسعه‌دهنده
+### می‌خواهم رویش کار کنم
 
 ```bash
 git clone https://github.com/zet4u/Minder.git
@@ -105,7 +112,7 @@ npm start
 
 <div dir="rtl">
 
-اگر `npm install` نتوانست باینری الکترون را دانلود کند (شبکه‌ی محدود یا فیلترینگ)، زیپ الکترون را دستی از [releases الکترون](https://github.com/electron/electron/releases/tag/v31.4.0) بگیر و از اسکریپت آماده استفاده کن — همه‌ی کار را خودکار انجام می‌دهد:
+اگر `npm install` سر دانلود الکترون گیر کرد (ایران، فیلترینگ، شبکه‌ی خراب — هر دلیلی)، خودت را ازیت نکن. زیپ را دستی از [releases الکترون](https://github.com/electron/electron/releases/tag/v31.4.0) بگیر و بقیه را بسپار به این اسکریپت:
 
 </div>
 
@@ -113,11 +120,17 @@ npm start
 powershell -ExecutionPolicy Bypass -File .\setup.ps1 -ElectronZip "D:\Downloads\electron-v31.4.0-win32-x64.zip"
 ```
 
-### ساخت خروجی ویندوز
+<div dir="rtl">
+
+خودش اکسترکت می‌کند، مسیرها را مرتب می‌کند، سلامت فایل‌ها را چک می‌کند و برنامه را بالا می‌آورد.
+
+</div>
+
+### می‌خواهم خروجی exe بگیرم
 
 <div dir="rtl">
 
-**روش آفلاین (توصیه‌شده)** — از الکترون موجود استفاده می‌کند و چیزی دانلود نمی‌کند:
+راه آفلاین و بی‌دردسر — از الکترونی که همین حالا داری استفاده می‌کند و چیزی دانلود نمی‌کند:
 
 </div>
 
@@ -127,36 +140,33 @@ powershell -ExecutionPolicy Bypass -File .\build-exe.ps1 -Zip
 
 <div dir="rtl">
 
-خروجی: `dist\Minder\Minder.exe` پرتابل به‌همراه `dist\Minder-win-x64.zip`.
+نتیجه: `dist\Minder\Minder.exe` پرتابل به‌همراه `dist\Minder-win-x64.zip` برای پخش کردن.
 
-**نسخه‌ی نصب‌کننده (NSIS)** — به اینترنت آزاد نیاز دارد:
+اگر نصب‌کننده‌ی واقعی می‌خواهی (`Minder Setup.exe`) با `npm run dist` — ولی این یکی به اینترنت آزاد نیاز دارد.
 
 </div>
 
-```bash
-npm run dist
-```
-
-## داده‌های تو کجا ذخیره می‌شوند
+## داده‌های من کجا می‌روند
 
 ```
-%APPDATA%\Minder\minder.json          داده‌ها (با پشتیبان خودکار minder.json.bak)
+%APPDATA%\Minder\minder.json          همه‌ی داده‌ها (+ minder.json.bak پشتیبان خودکار)
 %APPDATA%\Minder\profile\avatar-*     تصویر پروفایل
-%APPDATA%\Minder\renderer.log         لاگ خطاها
+%APPDATA%\Minder\renderer.log         لاگ خطاها برای وقتی که چیزی خراب شد
 ```
 
 <div dir="rtl">
 
-یک فایل JSON خوانای انسان، با نوشتن اتمیک (`.tmp` و سپس rename) و بازیابی خودکار از پشتیبان در صورت خرابی.
-هیچ داده‌ای داخل پوشه‌ی پروژه نوشته نمی‌شود — یعنی کلون کردن یا پوش کردن مخزن هیچ اطلاعات شخصی‌ای را جابه‌جا نمی‌کند.
+یک فایل JSON ساده و خوانا که خودت می‌توانی بازش کنی و بخوانیش. نوشتن اتمیک است (اول `.tmp` بعد جابه‌جایی)، پس اگر وسط ذخیره برق برود داده‌ات سالم می‌ماند؛ و اگر فایل خراب شود، خودکار از پشتیبان بازیابی می‌شود.
+
+داخل پوشه‌ی پروژه هیچ داده‌ای نوشته نمی‌شود — پس کلون کردن، پوش کردن و فورک کردن مخزن به داده‌ی شخصی کسی کاری ندارد.
 
 </div>
 
-## ساختار پروژه
+## چه خبر از درون
 
 ```
 src/main/main.js         پروسه‌ی اصلی، پنجره، کانال‌های IPC، رندر PNG کارت
-src/main/db.js           ذخیره‌ساز JSON اتمیک با پشتیبان و بازیابی
+src/main/db.js           ذخیره‌ساز JSON با نوشتن اتمیک و بازیابی
 src/main/preload.js      پل امن contextBridge به رابط کاربری
 src/renderer/app.js      منطق و رندر رابط کاربری
 src/renderer/jalali.js   تبدیل تقویم شمسی
@@ -164,19 +174,20 @@ src/renderer/card.js     ساخت SVG کارت روزانه
 src/renderer/charts.js   نمودارهای SVG
 assets/fonts/            فونت مدام (۸ وزن)
 setup.ps1                نصب دستی الکترون از زیپ محلی
-build-exe.ps1            ساخت خروجی پرتابل به‌صورت آفلاین
+build-exe.ps1            ساخت خروجی پرتابل، کاملاً آفلاین
 ```
 
-## مشارکت
+## می‌خواهم کمک کنم
 
 <div dir="rtl">
 
-Issue و Pull Request خوش‌آمد است. دو قاعده‌ی مهم پروژه:
+خوشحال می‌شوم. Issue بزن، PR بفرست، یا فقط بگو چه چیزی آزارت می‌دهد. دو قاعده‌ی پروژه را فقط حواست باشد:
 
-1. **بدون وابستگی زمان اجرا.** نه پکیج npm در سمت رابط کاربری، نه مادول بومی. هر کسی باید بتواند بیلد بگیرد بدون Visual Studio یا Python.
-2. **مراقب نام متغیرهای سراسری در `src/renderer` باش.** `contextBridge` ویژگی `window.api` را غیرقابل‌بازنویسی می‌سازد؛ اگر در سطح بالای اسکریپت `const api` تعریف کنی، کل فایل بدون هیچ پیام قابل‌دیدنی اجرا نمی‌شود و فقط یک پنجره‌ی خالی می‌بینی.
+**۱. بدون وابستگی زمان اجرا.** نه پکیج npm در سمت رابط کاربری، نه مادول بومی. هر کسی باید بتواند بدون Visual Studio و Python بیلد بگیرد. این تصمیم از دل دردسر گرفتن با `better-sqlite3` درآمد — جدی بگیرش.
 
-قبل از ارسال PR، برنامه را اجرا کن و مطمئن شو `%APPDATA%\Minder\renderer.log` خطایی ندارد.
+**۲. متغیر سراسری به نام `api` نساز.** `contextBridge` ویژگی `window.api` را غیرقابل‌بازنویسی می‌کند. اگر در سطح بالای یک اسکریپت `const api` تعریف کنی، کل فایل بی‌صدا اجرا نمی‌شود و فقط یک پنجره‌ی خالی می‌بینی — بدون هیچ پیام خطایی. یک ساعت از زندگی ما را گرفت؛ نگذار از مال تو هم بگیرد.
+
+قبل از فرستادن PR، برنامه را اجرا کن و یک نگاه به `%APPDATA%\Minder\renderer.log` بینداز.
 
 </div>
 
@@ -184,7 +195,7 @@ Issue و Pull Request خوش‌آمد است. دو قاعده‌ی مهم پرو
 
 <div dir="rtl">
 
-کد تحت مجوز [MIT](LICENSE) منتشر شده. فونت مدام مجوز مستقل خودش را دارد.
+کد تحت [MIT](LICENSE) — بردار، عوض کن، بفروش، هر کاری خواستی بکن. فونت مدام مجوز مستقل خودش را دارد.
 
 </div>
 
@@ -192,16 +203,19 @@ Issue و Pull Request خوش‌آمد است. دو قاعده‌ی مهم پرو
 
 ## English
 
-**Minder** is an offline focus-time tracker for Windows.
+**Minder** answers a question you have probably asked yourself at 2am:
+*where did today actually go?*
 
-Start a timer on a category (or log a time range by hand), and Minder builds
-your weekly, monthly and yearly picture from it — plus a shareable PNG summary
-card for each day. The interface is right-to-left Persian with a built-in Jalali
-calendar.
+Start a timer on whatever you are doing — or type the time range in later, if you
+forgot — and Minder turns it into your weekly, monthly and yearly picture, plus a
+shareable PNG card for each day. The interface is right-to-left Persian with a
+built-in Jalali calendar.
 
-- Electron 31, **zero runtime dependencies**, no native modules, no compiler needed
-- **Fully offline**: no accounts, no servers, no telemetry, no network requests at all
-- All data in one human-readable JSON file under `%APPDATA%\Minder`, with atomic writes and automatic backup recovery
+It asks for no account and makes no network requests, ever. Everything lives in a
+single readable JSON file under `%APPDATA%\Minder`, written atomically with
+automatic backup recovery.
+
+- Electron 31, **zero runtime dependencies**, no native modules, no compiler required
 - Hand-written SVG charts and card renderer — no charting library
 - Fixed 1160×740 frameless window
 
@@ -210,5 +224,5 @@ git clone https://github.com/zet4u/Minder.git && cd Minder
 npm install && npm start
 ```
 
-Prebuilt portable builds are on the [Releases](../../releases) page.
+Prebuilt portable builds live on the [Releases](../../releases) page.
 MIT licensed — the bundled Modam font keeps its own license.
