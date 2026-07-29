@@ -1,0 +1,53 @@
+# ---- dependencies & build output ----
+node_modules/
+dist/
+build/output/
+*.tsbuildinfo
+
+# ---- Electron runtime unpacked by setup.ps1 (huge, machine-specific) ----
+node_modules/electron/
+*.zip
+*.7z
+*.rar
+
+# ---- personal data: never commit ----
+# The app stores everything in %APPDATA%\Minder, NOT in this folder,
+# so these rules are just belt-and-braces in case a file is ever copied here.
+minder.json
+minder.json.bak
+minder.json.tmp
+minder.json.corrupt-*
+minder-backup*.json
+profile/
+avatar-*
+avatar.*
+userData/
+
+# ---- exported daily cards ----
+minder-card-*.png
+*.card.png
+
+# ---- logs ----
+renderer.log
+*.log
+npm-debug.log*
+
+# ---- local scratch / preview files ----
+src/renderer/test.html
+src/renderer/t-*.html
+src/renderer/mock.js
+preview/
+
+# ---- lockfiles (optional: keep one, ignore the rest) ----
+yarn.lock
+pnpm-lock.yaml
+
+# ---- OS & editor noise ----
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.vscode/
+.idea/
+*.swp

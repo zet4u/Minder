@@ -1,0 +1,17 @@
+# Normalize line endings so contributors on Windows/macOS/Linux see clean diffs.
+* text=auto eol=lf
+
+# Windows scripts must keep CRLF or PowerShell/cmd can misbehave.
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Binary assets: never touch.
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+*.png binary
+*.jpg binary
+*.ico binary
+*.zip binary

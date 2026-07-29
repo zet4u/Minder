@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Minder</title>
+<link rel="stylesheet" href="styles.css">
+<script>
+/* boot watchdog: if the UI never finishes booting, show what went wrong
+   right inside the window instead of leaving a blank app. */
+window.__diag = []
+function __show(txt) {
+  var b = document.getElementById("__diagBox")
+  if (!b) {
+    b = document.createElement("div")
+    b.id = "__diagBox"
+    b.setAttribute("style",
+      "position:fixed;left:16px;right:16px;bottom:16px;z-index:99999;background:#3A1E1E;" +
+      "border:1px solid rgba(233,115,102,.55);border-radius:10px;padding:12px 14px;" +
+      "font:13px/1.7 Tahoma,sans-serif;color:#FFD8D3;white-space:pre-wrap;direction:rtl;" +
+      "max-height:45%;overflow:auto;user-select:text")
+    ;(document.body || document.documentElement).appendChild(b)
+  }
+  b.textContent = txt
+}
+window.addEventListener("error", function (e) {
+  var t = e.target
+  if (t && (t.src || t.href)) window.__diag.push("فایل لود نشد: " + (t.src || t.href))
+  else window.__diag.push("خطا: " + (e.message || e) + " @" + (e.filename || "") + ":" + (e.lineno || 0))
+  __show(window.__diag.join("\n"))
+}, true)
+window.addEventListener("unhandledrejection", function (e) {
+  var r = e.reason
+  window.__diag.push("خطا: " + ((r && r.message) || r))
+  __show(window.__diag.join("\n"))
+})
+setTimeout(function () {
+  if (window.__booted) return
+  var info =
+    "برنامه کامل بالا نیامد. وضعیت:\n" +
+    "stage = " + (window.__stage || "-") + "\n" +
+    "api = " + (window.api ? "ok" : "MISSING") +
+    " | app.js = " + (window.__appLoaded ? "ok" : "MISSING") +
+    " | Jalali = " + (window.Jalali ? "ok" : "MISSING") +
+    " | Card = " + (window.Card ? "ok" : "MISSING") +
+    " | Charts = " + (window.Charts ? "ok" : "MISSING")
+  if (window.__diag.length) info += "\n" + window.__diag.join("\n")
+  __show(info)
+}, 5000)
+</script>
+
+</head>
+<body>
+
+<div class="titlebar">
+  <div class="tb-title">
+    <span class="tb-dot" id="tbDot"></span>
+    <span id="tbText">Minder</span>
+  </div>
+  <div class="winctl">
+    <button id="winMin" aria-label="کوچک کردن">
+      <svg width="10" height="10" viewBox="0 0 10 10" role="img"><rect x="0" y="4.5" width="10" height="1" fill="currentColor"/></svg>
+    </button>
+    <button id="winClose" class="close" aria-label="بستن">
+      <svg width="10" height="10" viewBox="0 0 10 10" role="img"><path d="M0 0 L10 10 M10 0 L0 10" stroke="currentColor" stroke-width="1.1"/></svg>
+    </button>
+  </div>
+</div>
+
+<div class="shell">
+  <aside class="side">
+    <button class="me" id="meBtn">
+      <span class="ava" id="meAva">●</span>
+      <span class="col">
+        <span class="nm" id="meName">…</span>
+        <span class="rl" id="meRole">…</span>
+      </span>
+    </button>
+
+    <nav class="group" id="navMain"></nav>
+
+    <div class="group" style="min-height:0">
+      <div class="g-lab"><span>دسته‌ها</span></div>
+      <div class="catlist" id="catList"></div>
+      <button class="nav" id="newCatBtn"><span class="ico">+</span><span class="lbl">دسته‌ی جدید</span></button>
+    </div>
+
+    <div class="sidefoot">
+      <div class="mini"><span>هدف امروز</span><span class="tnum" id="sfGoal">–</span></div>
+      <div class="bar"><i id="sfBar" style="width:0%"></i></div>
+      <div class="mini"><span id="sfStreak">–</span><span class="tnum" id="sfStreakN">–</span></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div class="crumb">Minder / <b id="crumb">امروز</b></div>
+      <div class="tabs" id="tabs"></div>
+    </div>
+    <div class="scroll" id="scroll">
+      <div class="wrap" id="view"></div>
+    </div>
+  </main>
+</div>
+
+<div id="modalRoot"></div>
+<div id="toastRoot"></div>
+
+<script src="jalali.js"></script>
+<script src="card.js"></script>
+<script src="charts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
